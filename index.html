@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./assets/css/style.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h2>Primer Problema</h2>
+    <p>haz clic en la imagen para agregar o quitar el borde</p>
+    <img
+      id="miImagen"
+      src="./assets/imgs/perrito.jpeg"
+      alt="perrito feliz"
+      onclick="
+    let imagen = document.querySelector('#miImagen');
+    if (imagen.style.border === '2px solid red') {
+            imagen.style.border = 'none';
+        } else {
+            imagen.style.border = '2px solid red';
+        }    
+    "
+    />
+
+    <h2>Segundo Problema</h2>
+    <p>Puedes llevar hasta 10 stickers en total</p>
+    <img class="sticker-img" src="./assets/imgs/git.jpg" alt="Sticker 1" />
+    <input type="number" id="sticker1" value="0" />
+
+    <img class="sticker-img" src="./assets/imgs/git2.jpg" alt="Sticker 2" />
+    <input type="number" id="sticker2" value="0" />
+
+    <img class="sticker-img" src="./assets/imgs/git3.png" alt="Sticker 3" />
+    <input type="number" id="sticker3" value="0" />
+
+    <p id="mensaje">Llevas 0 stickers</p>
+
+    <button
+      onclick="
+        var sticker1 = parseInt(document.querySelector('#sticker1').value) || 0;
+        var sticker2 = parseInt(document.querySelector('#sticker2').value) || 0;
+        var sticker3 = parseInt(document.querySelector('#sticker3').value) || 0;
+        var totalStickers = sticker1 + sticker2 + sticker3;
+        var mensaje = document.querySelector('#mensaje');
+        if (totalStickers > 10) {
+            mensaje.textContent = 'Llevas demasiados stickers';
+        } else {
+            mensaje.textContent = 'Llevas ' + totalStickers + ' stickers';
+        }
+    "
+    >
+      Verificar
+    </button>
+
+    <h2>Tercer Problema</h2>
+
+    <p>Ingresa el password</p>
+
+    <!-- Los tres selectores para los dígitos del password -->
+    <select id="digit1" class="select">
+      <option value="1">1</option>
+      <option value="2">2</option>
+      <option value="3">3</option>
+      <option value="4">4</option>
+      <option value="5">5</option>
+      <option value="6">6</option>
+      <option value="7">7</option>
+      <option value="8">8</option>
+      <option value="9">9</option>
+    </select>
+
+    <select id="digit2" class="select">
+      <option value="1">1</option>
+      <option value="2">2</option>
+      <option value="3">3</option>
+      <option value="4">4</option>
+      <option value="5">5</option>
+      <option value="6">6</option>
+      <option value="7">7</option>
+      <option value="8">8</option>
+      <option value="9">9</option>
+    </select>
+
+    <select id="digit3" class="select">
+      <option value="1">1</option>
+      <option value="2">2</option>
+      <option value="3">3</option>
+      <option value="4">4</option>
+      <option value="5">5</option>
+      <option value="6">6</option>
+      <option value="7">7</option>
+      <option value="8">8</option>
+      <option value="9">9</option>
+    </select>
+
+    <button
+      onclick="
+    var digit1 = document.querySelector('#digit1').value;
+    var digit2 = document.querySelector('#digit2').value;
+    var digit3 = document.querySelector('#digit3').value;
+    
+    var password = digit1 + digit2 + digit3;
+    var mensaje = document.querySelector('#mensaje2');
+    
+    if (password === '911') {
+        mensaje.textContent = 'password 1 correcto';
+    } else if (password === '714') {
+        mensaje.textContent = 'password 2 correcto';
+    } else {
+        mensaje.textContent = 'password incorrecto';
+    }
+"
+    >
+      Ingresar
+    </button>
+
+    <p id="mensaje2"></p>
+
+    <script src="./assets/js/index.js"></script>
+  </body>
+</html>
